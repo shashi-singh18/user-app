@@ -1,0 +1,11 @@
+runtime: nodejs18
+
+handlers:
+  # Serve the Angular index.html for all routes (needed for Angular routing)
+  - url: /(.*)
+    static_files: dist/users-frontend/index.html
+    upload: dist/users-frontend/index.html
+
+  # Serve all other static files (JS, CSS, images)
+  - url: /(.*)
+    static_dir: dist/users-frontend
