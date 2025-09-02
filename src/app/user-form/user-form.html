@@ -1,0 +1,15 @@
+<div class="form-container">
+  <h2>Create User</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>Name *</label>
+    <input formControlName="name" placeholder="Enter your name" />
+
+    <label>Email *</label>
+    <input formControlName="email" placeholder="Eg: example@email.com" />
+
+    <label>Age *</label>
+    <input formControlName="age" type="number" placeholder="Enter your age" />
+
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+  </form>
+</div>
