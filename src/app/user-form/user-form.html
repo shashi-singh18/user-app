@@ -10,6 +10,22 @@
     <label>Age *</label>
     <input formControlName="age" type="number" placeholder="Enter your age" />
 
+    <label>Password *</label>
+    <input formControlName="password" type="password" placeholder="Enter password" />
+
+    <label>Roles *</label>
+    <div class="roles-checkboxes">
+      <label *ngFor="let role of rolesOptions">
+        <input 
+          type="checkbox" 
+          [value]="role" 
+          (change)="onRoleChange($event)" 
+          [checked]="(form.value.roles ?? []).includes(role)"
+        />
+        {{ role }}
+      </label>
+    </div>
+
     <button type="submit" [disabled]="form.invalid">Submit</button>
   </form>
 </div>
